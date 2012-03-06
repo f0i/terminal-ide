@@ -37,8 +37,8 @@ Welcome to :\n
 Anyone who has tried cross-compiling for android will know of what I speak..\n
 \n
 The main issues that  arise are : \n
-  2) ROOTED users may operate differently, but you need to set the application up, and all of it's configuration files, so that it runs from inside Terminal IDE's non-rooted memory space ie no /etc folder.\n
-  3) In my experience, STATICALLY linking the apps greatly improves their ability to run on many different android devices. If you ONLY want it for your device, you can target it more precisely and build a dynamically linked binary.\n
+  1) ROOTED users may operate differently, but you need to set the application up, and all of it's configuration files, so that it runs from inside Terminal IDE's non-rooted memory space ie no /etc folder. This may involve $HOME config files, ENVIRONMENT variables, compiling the app with HARD-CODED path names, to mention a few.\n
+  2) In my experience, STATICALLY linking the apps greatly improves their ability to run on many different android devices. If you ONLY want it for your device, you can target it more precisely and build a dynamically linked binary.\n
 \n
 'BUT dynamically linked binaries don't work on android', I hear you cry..\n
 \n
@@ -53,11 +53,11 @@ arm-none-linux-gnueabi-ld -rpath . hello.o libc.so -I /system/bin/ linker -o hel
 \n
 Now you get a dynamically linked executable 'hello' which works on Android.\n
 \n
-  4) Even if you get the app to compile, there is still a chance it will seg-fault when you run it on your device.. 
-  I'm looking at you 'svn'..and you 'qemu'.. :-( ..plus, I have a working version of Bochs, but it is sooo sloowww..\n
+  3) Even if you get the app to compile, there is still a chance it will just seg-fault when you run it on your device..
+  I'm looking at you 'svn'..and you 'qemu'.. :-( ..plus, I have a fully working version of Bochs, but it is sooo sloowww..\n
 \n
 The three build systems I have used to compile all the apps in Terminal IDE are : \n
-   1) Android NDK - the preferred option really, but the least compatible. Use the create-standalone-toolchain option.\n
+   1) Android NDK - the preferred option really, but the least compatible. I use the create-standalone-toolchain option mainly, but 'vim' is actually compiled using a proper Android.mk NDK project. It's the only one..\n
    2) CodeSourcery ARM toolchain - works well, but you MUST statically link your apps.\n
    3) BUILDROOT - that's how I built mc and htop..\n
 \n

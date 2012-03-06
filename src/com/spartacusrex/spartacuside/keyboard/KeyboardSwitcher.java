@@ -68,6 +68,8 @@ public class KeyboardSwitcher {
         //TYPE / SHIFTED / SIZE
         mKeyboards = new LatinKeyboard[4][2][KEYBOARD_SIZES];
 
+        //WHY IS THIS DONE LIKE THIS ? Because you can only specify the height in the XML..
+
         //Smaller 30dip size
         mKeyboards[KEYBOARD_NORM][NOT_SHIFTED][0] = new LatinKeyboard(zContext, R.xml.qwerty30);
         mKeyboards[KEYBOARD_NORM][SHIFTED][0] = new LatinKeyboard(zContext, R.xml.qwerty_shift30);
@@ -215,14 +217,20 @@ public class KeyboardSwitcher {
 
     private void setShiftKeys(){
         //Shift Keys
-        mKeyboards[KEYBOARD_NORM][NOT_SHIFTED][mSize].getShiftKey().on      = false;
-        mKeyboards[KEYBOARD_NORM][SHIFTED][mSize].getShiftKey().on          = mShiftLocked;
-        mKeyboards[KEYBOARD_FUNCTION][NOT_SHIFTED][mSize].getShiftKey().on  = false;
-        mKeyboards[KEYBOARD_FUNCTION][SHIFTED][mSize].getShiftKey().on      = mShiftLocked;
-        mKeyboards[KEYBOARD_FUNCTION_LARGE][NOT_SHIFTED][mSize].getShiftKey().on  = false;
-        mKeyboards[KEYBOARD_FUNCTION_LARGE][SHIFTED][mSize].getShiftKey().on      = mShiftLocked;
-        mKeyboards[KEYBOARD_LARGE][NOT_SHIFTED][mSize].getShiftKey().on     = false;
-        mKeyboards[KEYBOARD_LARGE][SHIFTED][mSize].getShiftKey().on         = mShiftLocked;
+        mKeyboards[KEYBOARD_NORM][NOT_SHIFTED][mSize].getShiftKeyLeft().on      = false;
+        mKeyboards[KEYBOARD_NORM][SHIFTED][mSize].getShiftKeyLeft().on          = mShiftLocked;
+        mKeyboards[KEYBOARD_FUNCTION][NOT_SHIFTED][mSize].getShiftKeyLeft().on  = false;
+        mKeyboards[KEYBOARD_FUNCTION][SHIFTED][mSize].getShiftKeyLeft().on      = mShiftLocked;
+        mKeyboards[KEYBOARD_FUNCTION_LARGE][NOT_SHIFTED][mSize].getShiftKeyLeft().on  = false;
+        mKeyboards[KEYBOARD_FUNCTION_LARGE][SHIFTED][mSize].getShiftKeyLeft().on      = mShiftLocked;
+        mKeyboards[KEYBOARD_LARGE][NOT_SHIFTED][mSize].getShiftKeyLeft().on     = false;
+        mKeyboards[KEYBOARD_LARGE][SHIFTED][mSize].getShiftKeyLeft().on         = mShiftLocked;
+
+        //Only on the large keyboard
+        mKeyboards[KEYBOARD_LARGE][NOT_SHIFTED][mSize].getShiftKeyRight().on            = false;
+        mKeyboards[KEYBOARD_LARGE][SHIFTED][mSize].getShiftKeyRight().on                = mShiftLocked;
+        mKeyboards[KEYBOARD_FUNCTION_LARGE][NOT_SHIFTED][mSize].getShiftKeyRight().on   = false;
+        mKeyboards[KEYBOARD_FUNCTION_LARGE][SHIFTED][mSize].getShiftKeyRight().on       = mShiftLocked;
     }
 
     //Do we switch

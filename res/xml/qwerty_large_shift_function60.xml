@@ -24,8 +24,8 @@
     android:verticalGap="0px"
     android:keyHeight="65dip">
 
-    <Row android:rowEdgeFlags="top">
-        <Key android:codes="96"  android:isRepeatable="true" android:keyLabel="`" android:keyWidth="9%p" android:keyEdgeFlags="left"/>
+<Row android:rowEdgeFlags="top">
+        <Key android:codes="96"  android:isRepeatable="true" android:keyLabel="`" android:keyWidth="6%p" android:keyEdgeFlags="left"/>
 
         <Key android:codes="131"  android:keyLabel="F1" android:keyWidth="7%p"/>
         <Key android:codes="132"  android:keyLabel="F2" android:keyWidth="7%p"/>
@@ -41,8 +41,7 @@
         <Key android:codes="141" android:keyLabel="F11" android:keyWidth="6%p"/>
         <Key android:codes="142" android:keyLabel="F12" android:keyWidth="6%p"/>
 
-        <Key android:codes="-2"  android:keyLabel="FN" android:keyWidth="9%p"
-             android:isModifier="true" android:isSticky="true" android:keyEdgeFlags="right"/>
+        <Key android:codes="-5" android:keyLabel="BKS"  android:isRepeatable="true" android:keyWidth="12%p" android:keyEdgeFlags="right"/>
 
     </Row>
 
@@ -69,6 +68,7 @@
 <!--    android:horizontalGap="5%p"-->
     <Row>
         <Key android:codes="9" android:keyLabel="TAB"  android:keyWidth="12%p" android:keyEdgeFlags="left"/>
+
         <Key android:codes="97"  android:isRepeatable="true" android:keyLabel="a" android:keyWidth="7%p" />
         <Key android:codes="115" android:isRepeatable="true" android:keyLabel="s" android:keyWidth="7%p" />
         <Key android:codes="100" android:isRepeatable="true" android:keyLabel="d" android:keyWidth="7%p" />
@@ -78,17 +78,17 @@
         <Key android:codes="106" android:isRepeatable="true" android:keyLabel="j" android:keyWidth="7%p" />
         <Key android:codes="107" android:isRepeatable="true" android:keyLabel="k" android:keyWidth="7%p" />
         <Key android:codes="108" android:isRepeatable="true" android:keyLabel="l" android:keyWidth="7%p" />
+
         <Key android:codes="58" android:isRepeatable="true" android:keyLabel=":" android:keyWidth="6%p" />
         <Key android:codes="64" android:isRepeatable="true" android:keyLabel="\u0040" android:keyWidth="6%p" />
 
-        <Key android:codes="-5" android:keyLabel="BKS"  android:isRepeatable="true" android:keyWidth="13%p" android:keyEdgeFlags="right"/>
+        <Key android:codes="13" android:keyIcon="@drawable/sym_keyboard_return" android:keyWidth="13%p" android:keyEdgeFlags="right" android:isRepeatable="true"/>
 
     </Row>
 
     <Row>
 
-        <Key android:codes="-1" android:keyIcon="@drawable/sym_keyboard_shift_locked" android:keyWidth="12%p"
-             android:isModifier="true" android:isSticky="true" android:keyEdgeFlags="left"/>
+        <Key android:codes="-1" android:keyIcon="@drawable/sym_keyboard_shift_locked" android:keyWidth="12%p" android:isModifier="true" android:isSticky="true" android:keyEdgeFlags="left"/>
 
         <Key android:codes="124" android:isRepeatable="true" android:keyLabel="|" android:keyWidth="6%p"/>
         <Key android:codes="122" android:isRepeatable="true" android:keyLabel="z" android:keyWidth="7%p"/>
@@ -104,14 +104,16 @@
 
         <Key android:codes="19" android:keyIcon="@drawable/up" android:isRepeatable="true"/>
 
-        <Key android:codes="13" android:keyIcon="@drawable/sym_keyboard_return" android:keyWidth="13%p" android:keyEdgeFlags="right" android:isRepeatable="true"/>
+        <Key android:codes="-999" android:keyIcon="@drawable/sym_keyboard_shift_locked" android:keyWidth="13%p" android:isModifier="true" android:isSticky="true" android:keyEdgeFlags="right"/>
+
     </Row>
 
     <Row android:rowEdgeFlags="bottom">
-        <Key android:codes="-9"  android:isSticky="true" android:isModifier="true" android:keyWidth="13%p" android:keyLabel="CTRL" android:keyEdgeFlags="left"/>
-        <Key android:codes="-10" android:isSticky="true" android:isModifier="true" android:keyWidth="12%p" android:keyLabel="ALT" />
+        <Key android:codes="-9"  android:isSticky="true" android:isModifier="true" android:keyWidth="11%p" android:keyLabel="CTRL" android:keyEdgeFlags="left"/>
+        <Key android:codes="-10" android:isSticky="true" android:isModifier="true" android:keyWidth="11%p" android:keyLabel="ALT" />
+        <Key android:codes="-2"  android:isModifier="true" android:isSticky="true" android:keyWidth="11%p" android:keyLabel="FN"/>
 
-        <Key android:codes="32"  android:keyIcon="@drawable/sym_keyboard_space" android:keyWidth="40%p" android:isRepeatable="true"/>
+        <Key android:codes="32"  android:keyIcon="@drawable/sym_keyboard_space" android:keyWidth="32%p" android:isRepeatable="true"/>
 
         <Key android:codes="63" android:isRepeatable="true" android:keyLabel="\u003F" android:keyWidth="6%p"/>
 

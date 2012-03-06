@@ -60,6 +60,7 @@ public class LatinKeyboardView extends KeyboardView {
     public LatinKeyboardView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
+        
     }
 
     public void setMode(int zMode){
@@ -310,7 +311,7 @@ public class LatinKeyboardView extends KeyboardView {
         }
     }
 
-    public void setKeyPositions(){
+/*    public void setKeyPositions(){
         //get The Keyboard..
         Keyboard keyb = getKeyboard();
 
@@ -463,8 +464,8 @@ public class LatinKeyboardView extends KeyboardView {
             int counter=0;
 
             //ROW 1
-            allkeys[counter].x     = 0;
-            allkeys[counter].width = (int)ninth;
+            allkeys[counter].x      = 0;
+            allkeys[counter].width  = (int)ninth;
             float pos = ninth;
             counter++;
 
@@ -584,6 +585,316 @@ public class LatinKeyboardView extends KeyboardView {
             allkeys[counter].width = (int)(tenth*4);
             counter++;
             pos += tenth*4;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)sixth;
+            counter++;
+            pos += sixth;
+
+            //Arrow Keys
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eigth;
+            counter++;
+            pos += eigth;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eigth;
+            counter++;
+            pos += eigth;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eigth;
+            counter++;
+            pos += eigth;
+
+            //Setup Key
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)fifth;
+        }
+
+    }
+ */
+    public void setKeyPositions(){
+        //get The Keyboard..
+        Keyboard keyb = getKeyboard();
+
+        if (keyb == null){
+//            Log.v("Spartacus","NO KEYBOARD TO MAP!!");
+            return;
+        }
+
+        try {
+            LatinKeyboard lkeyb = (LatinKeyboard) keyb;
+            if (lkeyb.hasKeysSet()) {
+//            Log.v("Spartacus","Render Saved..!");
+                return;
+            }
+            lkeyb.KeysSet();
+        } catch (Exception e) {
+            return;
+        }
+
+        //Get the keys..
+        List<Key> keys = keyb.getKeys();
+        Key[] allkeys  = keys.toArray(new Key[keys.size()]);
+
+        float width  = getWidth();
+//        Log.v("Spartacus","KEYBOARD WIDTH : "+width);
+
+        float thirtytwo = width / (100.0f / 32.0f);
+        float fifteenth   = width / (100.0f / 15.0f);
+        float fourteenth  = width / (100.0f / 14.0f);
+        float thirt       = width / (100.0f / 13.0f);
+        float twelth      = width / (100.0f / 12.0f);
+        float eleventh    = width / (100.0f / 11.0f);
+        float tenth       = width / (100.0f / 10.0f);
+        float ninth       = width / (100.0f / 9.0f);
+        float eigth       = width / (100.0f / 8.0f);
+        float seventh     = width / (100.0f / 7.0f);
+        float sixth       = width / (100.0f / 6.0f);
+        float fifth       = width / (100.0f / 5.0f);
+
+        //Which Mode
+        if(mMode == MODE_SMALL){
+            int counter=0;
+            //ROW 1
+            allkeys[counter].x     = 0;
+            allkeys[counter].width = (int)tenth;
+            counter++;
+
+            for(int i=0;i<10;i++){
+                allkeys[i+counter].x     = (int)(tenth + i*eigth);
+                allkeys[i+counter].width = (int)eigth;
+            }
+            counter+=10;
+
+            allkeys[counter].x     = (int)(width - tenth);
+            allkeys[counter].width = (int)tenth;
+            counter++;
+
+            //ROW 2
+            allkeys[counter].x     = 0;
+            allkeys[counter].width = (int)tenth;
+            counter++;
+
+            for(int i=0;i<10;i++){
+                allkeys[i+counter].x     = (int)(tenth + i*eigth);
+                allkeys[i+counter].width = (int)eigth;
+            }
+            counter+=10;
+
+            allkeys[counter].x     = (int)(width - tenth);
+            allkeys[counter].width = (int)tenth;
+            counter++;
+
+            //ROW 3
+            allkeys[counter].x     = 0;
+            allkeys[counter].width = (int)fourteenth;
+            counter++;
+
+            for(int i=0;i<9;i++){
+                allkeys[i+counter].x     = (int)(fourteenth + i*eigth);
+                allkeys[i+counter].width = (int)eigth;
+            }
+            counter+=9;
+
+            allkeys[counter].x     = (int)(width - fourteenth);
+            allkeys[counter].width = (int)fourteenth;
+            counter++;
+
+            //ROW 4
+            allkeys[counter].x     = 0;
+            allkeys[counter].width = (int)fourteenth;
+            counter++;
+
+            for(int i=0;i<9;i++){
+                allkeys[i+counter].x     = (int)(fourteenth + i*eigth);
+                allkeys[i+counter].width = (int)eigth;
+            }
+            counter+=9;
+
+            allkeys[counter].x     = (int)(width - fourteenth);
+            allkeys[counter].width = (int)fourteenth;
+            counter++;
+
+            //ROW 5
+            allkeys[counter].x     = 0;
+            allkeys[counter].width = (int)fifteenth;
+            counter++;
+            float pos = fifteenth;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)fifteenth;
+            counter++;
+            pos += fifteenth;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eigth;
+            counter++;
+            pos += eigth;
+
+            //Space bar
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)(eigth*3);
+            counter++;
+            pos += eigth*3;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eigth;
+            counter++;
+            pos += eigth;
+
+            //Arrow Keys
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eigth;
+            counter++;
+            pos += eigth;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eigth;
+            counter++;
+            pos += eigth;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eigth;
+            counter++;
+            pos += eigth;
+
+            //Setup Key
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)sixth;
+
+        }else{
+            int counter= 0;
+            float pos  = 0;
+
+            //ROW 1
+            allkeys[counter].x     = 0;
+            allkeys[counter].width = (int)sixth;
+            counter++;
+            pos += sixth;
+
+            for(int i=0;i<10;i++){
+                allkeys[counter].x     = (int)(pos);
+                allkeys[counter].width = (int)seventh;
+                pos += seventh;
+                counter++;
+            }
+
+            for(int i=0;i<2;i++){
+                allkeys[counter].x     = (int)(pos);
+                allkeys[counter].width = (int)sixth;
+                pos += sixth;
+                counter++;
+            }
+
+            allkeys[counter].x     = (int)(width - twelth);
+            allkeys[counter].width = (int)twelth;
+            counter++;
+
+            //ROW 2
+            allkeys[counter].x     = 0;
+            allkeys[counter].width = (int)ninth;
+            pos = ninth;
+            counter++;
+
+            for(int i=0;i<10;i++){
+                allkeys[i+counter].x     = (int)(pos);
+                allkeys[i+counter].width = (int)seventh;
+                pos += seventh;
+            }
+            counter+=10;
+
+            for(int i=0;i<2;i++){
+                allkeys[i+counter].x     = (int)(pos);
+                allkeys[i+counter].width = (int)sixth;
+                pos += sixth;
+            }
+            counter+=2;
+
+            allkeys[counter].x     = (int)(width - ninth);
+            allkeys[counter].width = (int)ninth;
+            counter++;
+
+            //ROW 3
+            allkeys[counter].x     = 0;
+            allkeys[counter].width = (int)twelth;
+            pos = twelth;
+            counter++;
+
+            for(int i=0;i<9;i++){
+                allkeys[i+counter].x     = (int)(pos);
+                allkeys[i+counter].width = (int)seventh;
+                pos += seventh;
+            }
+            counter+=9;
+
+            for(int i=0;i<2;i++){
+                allkeys[i+counter].x     = (int)(pos);
+                allkeys[i+counter].width = (int)sixth;
+                pos += sixth;
+            }
+            counter+=2;
+
+            allkeys[counter].x     = (int)(width - thirt);
+            allkeys[counter].width = (int)thirt;
+            counter++;
+
+            //ROW 4
+            allkeys[counter].x     = 0;
+            allkeys[counter].width = (int)twelth;
+            pos = twelth;
+            counter++;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)sixth;
+            pos += sixth;
+            counter++;
+
+            for(int i=0;i<7;i++){
+                allkeys[i+counter].x     = (int)(pos);
+                allkeys[i+counter].width = (int)seventh;
+                pos += seventh;
+            }
+            counter+=7;
+
+            for(int i=0;i<2;i++){
+                allkeys[i+counter].x     = (int)(pos);
+                allkeys[i+counter].width = (int)sixth;
+                pos += sixth;
+            }
+            counter+=2;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eigth;
+            pos += eigth;
+            counter++;
+
+            allkeys[counter].x     = (int)(width - thirt);
+            allkeys[counter].width = (int)thirt;
+            counter++;
+
+            //ROW 5
+            allkeys[counter].x     = 0;
+            allkeys[counter].width = (int)eleventh;
+            counter++;
+            pos = eleventh;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eleventh;
+            counter++;
+            pos += eleventh;
+
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)eleventh;
+            counter++;
+            pos += eleventh;
+
+            //Space bar
+            allkeys[counter].x     = (int)pos;
+            allkeys[counter].width = (int)(thirtytwo);
+            counter++;
+            pos += thirtytwo;
 
             allkeys[counter].x     = (int)pos;
             allkeys[counter].width = (int)sixth;

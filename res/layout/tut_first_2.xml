@@ -54,7 +54,7 @@ Now you will understand what builder.sh and run.sh are doing : \n
 # cat builder.sh\n
 # cat run.sh\n
 \n
-Now let's play with vim a little\n
+Now let's play with vim a little.. VIM not VI - they are different! vi is included only as a fail-safe, from busybox, in-case you break vim with 'weird' config settings.\n
 \n
 # vim hello.java\n
 \n
@@ -75,11 +75,11 @@ You should see java completion for the available options!\n
 There are many available completion type : \n
   - [CTRL]+X [CTRL]+U\n USER java completion\n
   - [CTRL]+X [CTRL]+O\n OMNI completion, syntax based for many languages\n
-  - [CTRL]+X [CTRL]+F\n FILE name completion, very handy try ~[CTRL]+X [CTRL]+F\n
+  - [CTRL]+X [CTRL]+F\n FILE name completion, VERY HANDY, try ~[CTRL]+X [CTRL]+F\n
   \n
-And more.. (Enable the dictionary in your ~/.vimrc for many more options..) But for us the important one is the USER completion. Java.\n
+And more.. (Enable the dictionary in your ~/.vimrc for many more options) But for us the important one is the USER completion. Java.\n
 \n
-Completion only works in INSERT mode..\n
+Completion only works in INSERT mode.. The auto-popup vim plugin is included, so if you type normally, after the 2nd letter of a word,  the auto-completion window should just popup automatically.. sweet. :-)\n
 \n
 You can even compile the code with [F7] (this is setup in your ~/.vimrc).\n
 \n

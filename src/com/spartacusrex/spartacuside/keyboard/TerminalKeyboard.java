@@ -764,16 +764,16 @@ public class TerminalKeyboard extends InputMethodService
 
             validkey = true;
 
-        }*/else if (primaryCode == Keyboard.KEYCODE_DELETE) {
+        }*/else if (primaryCode == -5) {
+            //Normal BACK delete
             soundeffect = AudioManager.FX_KEYPRESS_DELETE;
-
             handleBackspace();
 
         } else if (primaryCode == -6) {
             //Forward delete
             keyDownUp(-100);
 
-        } else if (primaryCode == Keyboard.KEYCODE_SHIFT && mInputView != null) {
+        } else if (primaryCode == -1  || primaryCode == -999) {
             handleShift();
             
         } else if (primaryCode == -3) {
