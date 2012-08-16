@@ -108,7 +108,7 @@ A list of some useful functions :\n
 \n
 [CTRL]+a ,  > Rename current window\n
 [CTRL]+a ?  > List all keybindings\n
-[CTRL]+a [  > Scroll Mode [Enter exits]\n
+[CTRL]+a [  > Scroll Mode [ESC exits or CTRL+C]\n
 [CTRL]+a w  > List windows\n
 \n
 You need to 'exit' and shut down the window panes individually. When all are shut down, tmux stops.. There may be a faster way?\n

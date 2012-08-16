@@ -668,7 +668,7 @@ public class TerminalKeyboard extends InputMethodService
     // Implementation of KeyboardViewListener
     public int mLastPrimCode=-87687;
     public void onKey(int primaryCode, int[] keyCodes) {
-        //Log.v("SpartacusRex","MAIN SOFT ENTRY : onKey "+primaryCode);
+//        Log.v("SpartacusRex","MAIN SOFT ENTRY : onKey "+primaryCode);
 
         if(mInputView == null){
             return;
@@ -769,6 +769,10 @@ public class TerminalKeyboard extends InputMethodService
             soundeffect = AudioManager.FX_KEYPRESS_DELETE;
             handleBackspace();
 
+        } else if (primaryCode == -743) {
+            //SPECIAL ENTER..
+            keyDownUp(KeyEvent.KEYCODE_ENTER);
+
         } else if (primaryCode == -6) {
             //Forward delete
             keyDownUp(-100);
@@ -847,7 +851,14 @@ public class TerminalKeyboard extends InputMethodService
                 soundeffect = AudioManager.FX_KEYPRESS_SPACEBAR;
             }
 
-            handleCharacter(primaryCode, keyCodes);
+            if(primaryCode == 13 && mKeyboards.isCTRL()){
+                //Always send the ENTER key
+                keyDownUp(KeyEvent.KEYCODE_ENTER);
+                
+            }else{
+                handleCharacter(primaryCode, keyCodes);
+            }
+
             validkey = true;
         }
 

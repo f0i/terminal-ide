@@ -49,7 +49,7 @@ So you just have to tell your ld about it:\n
 For an imaginary hello.c file\n
 \n
 arm-none-linux-gnueabi-gcc -c -o hello.o hello.c\n
-arm-none-linux-gnueabi-ld -rpath . hello.o libc.so -I /system/bin/ linker -o hello\n
+arm-none-linux-gnueabi-ld -rpath . hello.o libc.so -I /system/bin/linker -o hello\n
 \n
 Now you get a dynamically linked executable 'hello' which works on Android.\n
 \n

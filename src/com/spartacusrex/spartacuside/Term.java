@@ -90,6 +90,7 @@ public class Term extends Activity {
     private final static int SELECT_TEXT_ID = 0;
     private final static int COPY_ALL_ID = 1;
     private final static int PASTE_ID = 2;
+    private final static int CLEAR_ALL_ID = 3;
 
     private boolean mAlreadyStarted = false;
 

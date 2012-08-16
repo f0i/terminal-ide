@@ -175,7 +175,10 @@ public class TermService extends Service implements SharedPreferences.OnSharedPr
         /* Put the service in the foreground. */
         Notification notification = new Notification(R.drawable.terminal, getText(R.string.service_notify_text), System.currentTimeMillis());
         notification.flags |= Notification.FLAG_ONGOING_EVENT;
-        Intent notifyIntent = new Intent(this, Term.class);
+
+//        Intent notifyIntent = new Intent(this, Term.class);
+        Intent notifyIntent = new Intent(this, Start.class);
+        
         notifyIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notifyIntent, 0);
         notification.setLatestEventInfo(this, getText(R.string.application_terminal), getText(R.string.service_notify_text), pendingIntent);

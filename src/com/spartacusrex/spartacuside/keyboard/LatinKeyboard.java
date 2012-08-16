@@ -22,12 +22,13 @@ import android.content.res.XmlResourceParser;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.Keyboard.Key;
 import android.inputmethodservice.Keyboard.Row;
+import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import com.spartacusrex.spartacuside.R;
 
 public class LatinKeyboard extends Keyboard {
 
-    private static int[] NORMAL_ENTER = {10};
+    private static int[] NORMAL_ENTER = {-743};
     private static int[] TERMINAL_ENTER = {13};
 
     private Key mEnterKey;
@@ -139,6 +140,8 @@ public class LatinKeyboard extends Keyboard {
             return;
         }
         
+        int valnorm = KeyEvent.KEYCODE_ENTER;
+
         switch (options&(EditorInfo.IME_MASK_ACTION|EditorInfo.IME_FLAG_NO_ENTER_ACTION)) {
             case EditorInfo.IME_ACTION_GO:
                 mEnterKey.iconPreview = null;

@@ -316,8 +316,8 @@ public class EmulatorView extends View implements GestureDetector.OnGestureListe
             private int mCursor;
             private int mComposingTextStart;
             private int mComposingTextEnd;
-            private int mSelectedTextStart;
-            private int mSelectedTextEnd;
+            private int mSelectedTextStart = 0;
+            private int mSelectedTextEnd   = 0;
 
             private void sendChar(int c) {
                 try {
@@ -574,10 +574,24 @@ public class EmulatorView extends View implements GestureDetector.OnGestureListe
             }
 
             public CharSequence getSelectedText(int flags) {
-                if (TermDebug.LOG_IME) {
-                    Log.w(TAG, "getSelectedText " + flags);
+
+                try {
+
+                    if (TermDebug.LOG_IME) {
+                        Log.w(TAG, "getSelectedText " + flags);
+                    }
+
+                    if (mImeBuffer.length() < 1) {
+                        return "";
+                    }
+
+                    return mImeBuffer.substring(mSelectedTextStart, mSelectedTextEnd + 1);
+
+                } catch (Exception e) {
+                    
                 }
-                return mImeBuffer.substring(mSelectedTextStart, mSelectedTextEnd+1);
+
+                return "";
             }
 
         };

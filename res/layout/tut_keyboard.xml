@@ -22,18 +22,25 @@
                   android:layout_width="fill_parent"
                   android:layout_height="fill_parent"
                   android:text=
-"The Keyboard is VERY important. You need access to the CONTROL keys of a keyboard or
-none of these command line applications will work properly.. \n
+"The Keyboard is VERY important.\n
+\n
+You need access to the CONTROL keys of a keyboard or none of these command line applications will work properly.. \n
 \n
 Terminal IDE comes with a full 128 set ASCII soft 'on screen' keyboard.\n
 \n
-You will need to enable it in the Settings > 'Language and Keyboard' section of your device.\n
+NB! This keyboard is really ONLY for use in TERMINAL IDE / other Terminals.. The emulators expect ^M. Android expects something else.\n
 \n
-You can select the keyboard from the main screen by pressing 'Keyboard'. You can
-switch back to your regular keyboard easily by clicking the options button in the bottom right of the keyboard itself.\n
+That is why some of you complain about the ENTER KEY NOT WORKING. It works in Terminal IDE correctly.. Not in Android.\n
 \n
-There is a small-ish version and a larger version, and you can set them differently depending on the orientation, in
-the Keyboard Settings.\n
+BUT - I have now set it so that if you ever get the SEND, NEXT or GO icon on the keyboard it will send the correct ANDROID enter key.\n
+\n
+AND - If you need to send an ANDROID ENTER KEY, say to unlock the screen with a pin (when you can't just change keyboard..) then use CTRL+ENTER . This will ALWAYS send the correct Android ENTER value.\n
+\n
+You will need to enable the keyboard in the Settings > 'Language and Keyboard' section of your device.\n
+\n
+You can select the keyboard from the main screen by pressing 'Keyboard'. You can switch back to your regular keyboard easily by clicking the options button in the bottom right of the keyboard itself.\n
+\n
+There is a small-ish version and a larger version, and you can set them differently depending on the orientation, in the Keyboard Settings.\n
 \n
 Terminal IDE also comes with a powerful Hard Keybaord Mapper so that MOST external keyboards should now work. And work well.\n
 \n
