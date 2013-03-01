@@ -37,9 +37,9 @@ import java.io.File;
 public class installer extends Activity implements OnClickListener{
 
     //THE MAIN INSTALL VALUE
-    public static int      CURRENT_INSTALL_SYSTEM_NUM  = 14;
-    public static String   CURRENT_INSTALL_SYSTEM      = "System v1.95";
-    public static String   CURRENT_INSTALL_ASSETFILE   = "system-1.95.tar.gz.mp3";
+    public static int      CURRENT_INSTALL_SYSTEM_NUM  = 20;
+    public static String   CURRENT_INSTALL_SYSTEM      = "System v2.0";
+    public static String   CURRENT_INSTALL_ASSETFILE   = "system-2.0.tar.gz.mp3";
 
     private ProgressDialog mInstallProgress;
     
@@ -302,11 +302,17 @@ public class installer extends Activity implements OnClickListener{
                         pp.waitFor();
 
                         //Make a few initial folders
-                        File bin = new File(home,"bin");
-                        if(!bin.exists()){bin.mkdirs();}
+                        File local = new File(home,"local");
+                        if(!local.exists()){local.mkdirs();}
+                        
+                            File bin = new File(local,"bin");
+                            if(!bin.exists()){bin.mkdirs();}
 
-                        bin = new File(home,"lib");
-                        if(!bin.exists()){bin.mkdirs();}
+                            bin = new File(local,"lib");
+                            if(!bin.exists()){bin.mkdirs();}
+                            
+                            bin = new File(local,"include");
+                            if(!bin.exists()){bin.mkdirs();}
 
                         bin = new File(home,"tmp");
                         if(!bin.exists()){bin.mkdirs();}

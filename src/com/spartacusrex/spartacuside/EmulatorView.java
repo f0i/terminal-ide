@@ -43,7 +43,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.CompletionInfo;
-//import android.view.inputmethod.CorrectionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.ExtractedTextRequest;
@@ -57,11 +56,6 @@ import com.spartacusrex.spartacuside.session.TermSession;
 import com.spartacusrex.spartacuside.session.TranscriptScreen;
 import com.spartacusrex.spartacuside.util.TermSettings;
 import com.spartacusrex.spartacuside.util.hardkeymappings;
-import com.spartacusrex.spartacuside.util.keydata;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.Vector;
 
 /**
  * A view on a transcript and a terminal emulator. Displays the text of the

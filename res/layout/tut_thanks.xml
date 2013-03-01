@@ -33,6 +33,7 @@ Get the code from http://code.google.com/p/terminal-ide/\n
 Thanks especially to :\n
 \n
     : JackPal - for his excellent terminal emulator\n
+    : Dan Drown - wonderful build system to compile c apps - http://dan.drown.org/android/\n
     : Tom Arn - for aapt, jarsigner\n
     : DropBear - for sshd\n
     : Bash Boys - for bash\n
@@ -46,7 +47,7 @@ Thanks especially to :\n
     \n
     Simon Funk, Kevin Boone,.. \n
     \n
-    Thank you.\n
+    Thank you!\n
 " />
 
 </ScrollView>

@@ -23,6 +23,14 @@
                   android:layout_height="fill_parent"
                   android:text=
 "\n
+v2.0  - NEW BUILD SYSTEM - All dynamic binary files. If it works, I'll add more.\n
+      - Added GCC 4.4.0 (arm-eabi-gcc)\n
+      - Added 'make', 'ctags', and 'taglist' vim plugin.\n
+      - Added 'links' console web browser (DNS works for this)\n
+      - Fixed GIT, so that git-pull, push and merge now work! (Still no ssl, use ssh -L)\n
+      - Added c/cpp examples. READ ALL THE HELP/TUTORIALS\n
+      - Put cd $HOME back in .bashrc.. TMUX prefers it.\n
+\n
 v1.95 - Changed / Fixed ~/.bashrc\n
       - Paths now set in ~/.init. Not elongated every time you run bash.\n
       - TERM now set in ~/.init. Not reset when you start tmux (which works best/requires 'export TERM=screen' to render correctly)\n

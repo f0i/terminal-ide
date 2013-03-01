@@ -40,6 +40,12 @@ public class hardkeymappings {
     public static final int HARDKEY_PGDOWN  = 18;
     public static final int HARDKEY_HOME    = 19;
     public static final int HARDKEY_END     = 20;
+    
+//    public static final int HARDKEY_EXCLAMATION     = 21;
+//    public static final int HARDKEY_AMPERSAND       = 22;
+//    public static final int HARDKEY_HASH            = 23;
+//    public static final int HARDKEY_DOLLAR          = 24;
+//    public static final int HARDKEY_PERCENT         = 25;
 
     int[] mKeyMappings;
     boolean mEnabled = false;

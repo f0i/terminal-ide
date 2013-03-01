@@ -320,8 +320,8 @@ public class TermService extends Service implements SharedPreferences.OnSharedPr
             pw.println("");
             pw.println("# Set Special Paths");
             pw.println("export BOOTCLASSPATH=$HOME/system/classes/android.jar:$BOOTCLASSPATH");
-            pw.println("export LD_LIBRARY_PATH=$HOME/lib:$HOME/system/lib:$LD_LIBRARY_PATH");
-            pw.println("export PATH=$HOME/bin:$HOME/system/bin:$HOME/system/bin/bbdir:$PATH");
+            pw.println("export LD_LIBRARY_PATH=$HOME/local/lib:$HOME/system/lib:$LD_LIBRARY_PATH");
+            pw.println("export PATH=$HOME/bin:$HOME/local/bin:$HOME/android-gcc-4.4.0/bin:$HOME/system/bin:$HOME/system/bin/bbdir:$PATH");
             pw.println("");
             pw.println("#If ~/.bashrc exists - run it.");
             pw.println("if [ -f $HOME/.bashrc ]; then");
