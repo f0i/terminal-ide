@@ -454,12 +454,12 @@ public class EmulatorView extends View implements GestureDetector.OnGestureListe
                 return true;
             }
 
-            /*public boolean commitCorrection (CorrectionInfo correctionInfo) {
-                if (TermDebug.LOG_IME) {
-                    Log.w(TAG, "commitCorrection");
-                }
-                return true;
-            }*/
+//            public boolean commitCorrection (CorrectionInfo correctionInfo) {
+//                if (TermDebug.LOG_IME) {
+//                    Log.w(TAG, "commitCorrection");
+//                }
+//                return true;
+//            }
 
             public boolean commitText(CharSequence text, int newCursorPosition) {
                 if (TermDebug.LOG_IME) {

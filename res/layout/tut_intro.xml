@@ -50,7 +50,8 @@ should work fine, ie try..\n
 \n
 And it will tell you google's IP.\n
 \n
-Also - SSL is not built-in to most of the C apos. You do have ssh of course and can create SSL proxy pipes though that (tutorial coming some day.. it's easy).\n
+Also - SSL is not built-in to most of the C apos. You do have ssh of course and 
+can create SSL proxy pipes though that (tutorial coming some day.. it's easy, basically ssh -L).\n
 \n
 For the most amount of help possible, use Google! There are an infinite amount of tutorials on vim, bash, busybox and all the other available apps.\n
 \n
